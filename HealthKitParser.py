@@ -325,8 +325,11 @@ class HealthKitParser:
 
     # Logs
     def logIt(self):
-        with open("./apple-parsed-export", 'w+') as f:
-            json.dump(self.formated, f)
+        path: str = "./apple-parsed-export"
+
+        if os.path.exists(path) and not "--force" in sys.argv:
+            print("\033[93mWARNING\033[00m Output path already exists; try --force to overwrite it.")
+        Utils.saveinFile(path, self.formated)
 
 
 if __name__ == "__main__":
