@@ -1,0 +1,9 @@
+# Env
+__pycache__/
+
+# Exports
+apple_*
+
+# Temporary & Logs file
+output
+apple-parsed-export
